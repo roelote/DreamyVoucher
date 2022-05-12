@@ -13,10 +13,8 @@
 @section('content')
 <div class="container mx-auto shadow relative">
     <div class="my-10 p-5">
-       
             <h1 class="text-center font-bold text-2xl">VOUCHER 2022</h1>
             <span class="absolute right-0 top-0"><a href="{{ route('voucher.crear') }}" class="border-white rounded-lg p-2 border bg-emerald-600 text-white hover:bg-emerald-700">CREAR NUEVO</a></span>
-
         <div class="container mx-auto">
             <div class="flex flex-col">
                 <div class="w-full">

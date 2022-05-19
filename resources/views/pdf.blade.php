@@ -73,6 +73,10 @@ html
       {
         border-bottom: 1px solid;
       }
+      .pr-2
+      {
+        padding-left: 0.5rem;
+      }
 
 
   </style>
@@ -130,16 +134,16 @@ html
               </td>
             </tr>
             <tr class="border-b "  style="border-color: gray">
-              <td class="center"><b>Total</b></td>
-              <td class="center"><b>Adelanto</b></td>
-              <td class="center"><b>Fecha Adelanto</b></td>
-              <td class="center"><b>Falta Pagar</b></td>
+              <td class="pr-2"><b>Total</b></td>
+              <td class=""><b>Adelanto</b></td>
+              <td class=""><b>Fecha Adelanto</b></td>
+              <td class=""><b>Falta Pagar</b></td>
             </tr>
             <tr>
-              <td class="center">{{ $ids->price }} {{ $ids->currency }} </td>
-              <td class="center">{{ $ids->advancement }} {{ $ids->currency }} </td>
-              <td class="center">{{ $ids->date_advancement }} </td>
-              <td class="center">{{ $ids->debt }} {{ $ids->currency }}</td>
+              <td class="pr-2">{{ $ids->price }} {{ $ids->currency }} </td>
+              <td class="">{{ $ids->advancement }} {{ $ids->currency }} </td>
+              <td class="">{{ $ids->date_advancement }} </td>
+              <td class="">{{ $ids->debt }} {{ $ids->currency }}</td>
             </tr>
           </table>
           <br>
@@ -150,13 +154,13 @@ html
               </td>
             </tr>
             <tr class="border-b" style="border-color: gray">
-              <td class="center"><b>N°</b></td>
-              <td class="center"><b>Nombre</b></td>
-              <td class="center"><b>Apellidos</b></td>
-              <td class="center"><b>N° Pasaporte</b></td>
-              <td class="center"><b>Pais</b></td>
-              <td class="center"><b>Sexo</b></td>
-              <td class="center"><b>Fecha Nacimiento</b></td>
+              <td class="pr-2"><b>N°</b></td>
+              <td class=""><b>Nombre</b></td>
+              <td class=""><b>Apellidos</b></td>
+              <td class=""><b>N° Pasaporte</b></td>
+              <td class=""><b>Pais</b></td>
+              <td class=""><b>Sexo</b></td>
+              <td class=""><b>Fecha Nacimiento</b></td>
             </tr>
 
               @php
@@ -168,13 +172,13 @@ html
                         $counts++;
                     @endphp
                   <tr>
-                    <td class="center">{{$counts}}</td>
-                    <td class="center">{{$p->name}}</td>
-                    <td class="center">{{$p->lastname}}</td>
-                    <td class="center">{{$p->passport}}</td>
-                    <td class="center">{{$p->nationality}}</td>
-                    <td class="center">{{$p->sex}}</td>
-                    <td class="center">{{$p->birth_date}}</td>
+                    <td class="pr-2">{{$counts}}</td>
+                    <td class="">{{$p->name}}</td>
+                    <td class="">{{$p->lastname}}</td>
+                    <td class="">{{$p->passport}}</td>
+                    <td class="">{{$p->nationality}}</td>
+                    <td class="">{{$p->sex}}</td>
+                    <td class="">{{$p->birth_date}}</td>
                   
                 
               @endforeach

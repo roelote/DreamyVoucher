@@ -12,10 +12,10 @@ use PDF;
 class ControllerVoucher extends Controller
 {
 
-    //public function __construct()
-    //{
-    //      $this->middleware('auth');
-    // }
+    public function __construct()
+    {
+          $this->middleware('auth');
+     }
 
     public function index()
     {
@@ -124,7 +124,7 @@ class ControllerVoucher extends Controller
                     ]);
                 }
 
-        echo "se agrego correctamente";
+        return redirect()->route('voucher.index');
 
     }
 }

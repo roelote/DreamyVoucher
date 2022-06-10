@@ -22,6 +22,7 @@ Route::get('/', function () {
 Route::get('/',[ControllerVoucher::class,'index'])->name('voucher.index');
 Route::get('/crear',[ControllerVoucher::class,'crear'])->name('voucher.crear');
 Route::post('/crear',[ControllerVoucher::class,'store']);
+Route::get('/{id}/edit',[ControllerVoucher::class,'edit'])->name('voucher.edit');
 
 Route::get('/voucher-pdf/{id}', [ControllerVoucher::class,'exportPdf'] )->name('voucher.pdf');
 

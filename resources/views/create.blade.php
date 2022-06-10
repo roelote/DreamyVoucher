@@ -21,7 +21,7 @@
                             @enderror
                     </div>
                     <div>
-                        <label for="nombre" class="block mb-1 text-sm font-medium text-gray-900">Nombre</label>
+                        <label for="nombre" class="block mb-1 text-sm font-medium text-gray-900">Nombre Lider Grupo</label>
                         <input type="text" name="nombre" id="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full"  value="{{ old('nombre') }}" required>
                         @error('nombre')
                                <small class="bg-red-700 text-white px-1.5 py-1 rounded"> {{ $message }}</small>
@@ -331,7 +331,7 @@
                             <div><select name="se1[]" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2"> <option value="M">M</option><option value="F">F</option> </select></div>
                             <div><input type="date" name="fe1[]" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2"></div>
                         <div><button class="add-more bg-blue-500 hover:bg-blue-700 text-white font-bold py-1.5 px-4 rounded w-full">Agregar Pax</button></div>
-                </div>
+                  </div>
                 </div>
                 <h2 class="bg-teal-500 p-2 my-5 text-center text-white">Detalles del Servicio</h2>
                 <div>

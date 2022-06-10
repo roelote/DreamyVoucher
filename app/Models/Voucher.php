@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -26,6 +27,15 @@ class Voucher extends Model
         'Message',
     ];
 
+    public function getDateShowAttribute()
+    {
+        return $this->date_package = Carbon::parse($this->date_package)->format('d/m/Y');
+     }
+
+     public function getDateAdvAttribute()
+    {
+        return $this->date_advancement = Carbon::parse($this->date_advancement)->format('d/m/Y');
+     }
 
    // protected $dateFormat = 'd/m/Y';
 

@@ -85,7 +85,7 @@ return array (
     'normal' => $fontDir . '/sitka_small_bold_normal_d3740778f678bcf6337476f72447ade0',
   ),
   'robotocondensed-regular' => array(
-    'normal' => $fontDir . '/robotocondensed_regular_normal_f591c511a895bb84d965c43599e9e174',
+    'normal' => $fontDir . '/robotocondensed_regular_normal_1dac1dbb7f4352564d1487e290da2f39',
   ),
   'oswald-semibold' => array(
     'normal' => $fontDir . '/oswald_semibold_normal_44a2c92e001ef75b5821eb8828a18428',

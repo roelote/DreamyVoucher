@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Pax extends Model
 {
@@ -23,5 +24,10 @@ class Pax extends Model
     {
         return $this->belongsTo(voucher::class);
     }
+
+    public function getDatePaxAttribute()
+    {
+        return $this->birth_date = Carbon::parse($this->birth_date)->format('d/m/Y');
+     }
 
 }

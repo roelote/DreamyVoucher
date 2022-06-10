@@ -12,10 +12,10 @@ use PDF;
 class ControllerVoucher extends Controller
 {
 
-    public function __construct()
-    {
-          $this->middleware('auth');
-     }
+   // public function __construct()
+   // {
+   //       $this->middleware('auth');
+   //  }
 
     public function index()
     {
@@ -60,8 +60,9 @@ class ControllerVoucher extends Controller
                 ]);
 
                 //cambiando formato de fecha
-                $newdate = Carbon::parse($request->fecha)->format('d/m/Y');
-                $newdate2 = Carbon::parse($request->fecha_adelanto)->format('d/m/Y');
+                //$newdate = Carbon::parse($request->fecha)->format('d/m/Y');
+                //$newdate2 = Carbon::parse($request->fecha_adelanto)->format('d/m/Y');
+
 
 
                 //creando codigo de pax
@@ -84,12 +85,12 @@ class ControllerVoucher extends Controller
                     'name_pax'=>$request->nombre,
                     'email'=>$request->email,
                     'phone'=>$request->telefono,
-                    'date_package'=>$newdate,
+                    'date_package'=>$request->fecha,
                     'language'=>$request->idioma,
                     'currency'=>$request->moneda,
                     'price'=>$request->precio,
                     'advancement'=>$request->adelanto,
-                    'date_advancement'=>$newdate2,
+                    'date_advancement'=>$request->fecha_adelanto,
                     'debt'=>$request->falta,
                     'Message'=>$request->detalle,
                 ]);
@@ -109,8 +110,8 @@ class ControllerVoucher extends Controller
                 //insertamos cada pax
                 for ($i=0; $i < $count ; $i++) { 
                     
-                    $datens = $fecha_nacimiento[$i];
-                    $newdatepax = Carbon::parse($datens)->format('d/m/Y');
+                    //$datens = $fecha_nacimiento[$i];
+                    //$newdatepax = Carbon::parse($datens)->format('d/m/Y');
 
                     Pax::create([
                         'voucher_id'=>$ultimo->id,
@@ -120,11 +121,23 @@ class ControllerVoucher extends Controller
                         'passport'=>$pasaporte[$i],
                         'nationality'=>$nacionalidad[$i],
                         'sex'=>$sexo[$i],
-                        'birth_date'=>$newdatepax,
+                        'birth_date'=>$fecha_nacimiento[$i],
                     ]);
                 }
 
         return redirect()->route('voucher.index');
 
     }
+
+    public function edit($id)
+    {
+         $pax = Pax::findOrFail($id);
+         $voucher = Voucher::findOrFail($id);
+
+         return view('edit',compact('voucher','pax'));
+
+    }
+
+
+
 }

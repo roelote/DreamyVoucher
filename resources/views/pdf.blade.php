@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{ $ids->name_package }}</title>
   </head>
-
   <style>
 
 @font-face {
@@ -17,199 +16,165 @@ html
 {
   font-family: 'RobotoCondensed-Regular';
 }
-/*  html {
-    	margin: 0pt 0pt;
-    } */
+
+.content h1
+{
+  font-size: 12pt;
+}
+.content h2
+{
+  font-size: 11pt;
+}
+.content h3
+{
+  font-size: 10pt;
+}
     .page-break {
         page-break-after: always;
       }
-      /*table, th, td {
-            border-collapse: collapse;
-            width: 100%;
-          } */
+
       table {
       width: 100%;
-      border-collapse:collapse; 
       }
-      .border 
-      {
-        border: 1px solid;
-      }
-      .w50
-      {
-        width: 46%;
-      }
-      .w70
-      {
-        width: 70%;
-      }
-      .table td
-      {
-      padding: .3rem;
-      }
-      .center
-      {
-        text-align: center
-      }
-      .block
-      {
-        display: inline-block;
-        padding: 0cm;
-        margin: 0cm;
-      }
-      .w100
-      {
+            footer {
+                position: fixed; 
+                bottom: -70px; 
+                left: -30px; 
+                right: -30px;
+                height: 14pt;
+                font-size: 9px;
+                /** Extra personal styles **/
+                background-color: #052F61;
+                color: white;
+                text-align: center;
+
+                
+            }
+
+       table
+       {
+         font-size: 12px;
+         
+       }
+       table td
+       {
+          line-height: 10pt; 
+       }     
+      @page {
+                font-size: 15px;
+                margin-bottom: 75px;
+                margin-top: 10px;
+                margin-right: 30px;
+                margin-left: 30px;
+            }
+
+       .blue
+       {
+        background-color: #052F61;
         width: 100%;
-      }
-      .p-2
-      {
-        padding: .5rem;
-      }
-      .p-1
-      {
-        padding: 0.25rem;
-      }
-      .border-b
-      {
-        border-bottom: 1px solid;
-      }
-      .pr-2
-      {
-        padding-left: 0.5rem;
-      }
+        color: #ffffff;
+        margin-top: 3px;
+        padding-right: 10px;
+        padding-left: 5px;
+        
+       }     
 
+       .gray
+       {
+         background-color: #F4F5F7;
+       }
 
+       .content p,  .content ul li
+       {
+          font-size: 11px;
+       }
   </style>
 
 
   <body>
+          <table style="position: relative">
+            <img style="top: 1%; left: 4%" src="https://dreamy.tours/logo-grande.png" width="120px" alt="logo">
+            <div style="position: absolute;top: 3%; right: 3% ; padding: 5px;">
+              <div style="font-size: 20px;font-weight: 600;width: 100%;text-align:center">FACTURA</div>
+              <div style="border:2px solid #052F61;padding:7px">
+                <span><b>N° File:</b> {{ $ids->number_voucher }}</span><br>
+                <span><b>Voucher N°:</b> {{ $ids->id }}</span><br>
+                <span><b>Fecha Emisión:</b> {{ $ids->created_at->format('d/m/Y') }}</span>
+              </div>
+            </div>
+            <tr><td><b>Teléfono:</b> +51 969 787 221 - +51 963 414 234</td></tr>
+            <tr><td><b>Email:</b> info@dreamy.tours</td></tr>
+            <tr><td><b>Sitio Web:</b> https://dreamy.tours </td></tr>
+            <tr><td><b>Dirección:</b> Calle Tecte, CC María Angola, de. 216 2do piso, Cusco. | Av. Brasil N° 2173, Jesus Maria, Lima</td></tr>
 
-<br>
-
-    <table class="border" style="border-top-width: 20px; border-top-color: #14b8a6;border-bottom-color: gray; border-left-color: gray; border-right-color: gray ">
-
-      <tr>
-        <td>
-          <!-- <div class="p-2">
-            <span><b>VOUCHER: {{ $ids->id }}</b></span>
-          </div> -->
-          <div class="p-2">
-            <!-- <span class="p-1 block w100"><b>Empresa:</b> DREAMY TOURS</span>
-            <span class="p-1 block w100"><b>Telefono :</b> +51 969 787 221 | +51 963 414 234</span> -->
-            <!-- <span class="p-1 block w100"><b>Email :</b> info@dreamy.tours | operaciones@dreamy.tours</span>
-            <span class="p-1 block w100"><b>Dirección Cusco:</b> Calle Tecte, CC María Angola, de. 216 2do piso, Cusco.  </span>
-
-            <span class="p-1 block w100">--------------------------------------------------------------------------</span> -->
-
-            <span class="p-1 block w100"><b>N° File :</b> {{ $ids->number_voucher }}</span>
-            <span class="p-1 block w100"><b>Servicio :</b> {{ $ids->name_package }}</span>
-            <span class="p-1 block w100"><b>Nombre File :</b> {{ $ids->name_package }} </span>
-            <span class="p-1 block w100"><b>Cantidad de Paxs :</b> {{ $cant }} </span>
-            <span class="p-1 block w100"><b>Teléfono :</b> {{ $ids->phone }} </span>
-            <span class="p-1 block w100"><b>Fecha del Servicio :</b> {{ $ids->date_package }} </span>
-
-          </div>
-        </td>
-        <td>
-          <div class="border" style="position: absolute;top: 5%; right: 3% ; padding: 5px">
-            <b>Voucher N°: {{ $ids->id }}</b><br>
-            <b>Fecha Emisión: {{ $ids->created_at->format('d/m/Y') }}</b>
-          </div>
-          <img style="position: absolute; top: 11%; right: 4%" src="https://dreamy.tours/logo-grande.png" width="250px" alt="logo">
-        </td>
-      </tr>
-      <!-- <tr class="w30">
-        <td>
-          <img src="https://dreamy.tours/wp-content/uploads/2022/05/dreamy-bn.png" width="100px" alt="">
-        </td>
-      </tr> -->
-    </table>
-    <br>
-
-
-          <table class="border" style="border-color: gray">
-            <tr class="border-b" style="background-color: #14b8a6;color:#fff; ">
-              <td class="center" colspan="4" style="padding: 5px">
-                LIQUIDACIÓN
-              </td>
-            </tr>
-            <tr class="border-b "  style="border-color: gray">
-              <td class="pr-2"><b>Total</b></td>
-              <td class=""><b>Adelanto</b></td>
-              <td class=""><b>Fecha Adelanto</b></td>
-              <td class=""><b>Falta Pagar</b></td>
-            </tr>
-            <tr>
-              <td class="pr-2">{{ $ids->price }} {{ $ids->currency }} </td>
-              <td class="">{{ $ids->advancement }} {{ $ids->currency }} </td>
-              <td class="">{{ $ids->date_advancement }} </td>
-              <td class="">{{ $ids->debt }} {{ $ids->currency }}</td>
-            </tr>
+            <tr><td class="blue" ><b>DATOS SERVICIO</b></td></tr>
+            <tr><td><b>Cliente:</b> {{ $ids->name_pax }}</td></tr>
+            <tr class="gray"><td><b>Email:</b> {{ $ids->email  }} </td></tr>
+            <tr><td><b>Telefono:</b> {{ $ids->phone }} </td></tr>
+            <tr class="gray"><td><b>Servicio:</b> {{ $ids->name_package }}</td></tr>
+            <tr><td><b>Fecha Servicio:</b> {{ $ids->date_show }}</td></tr>
+            <tr class="gray"><td><b>Idioma:</b> {{ $ids->language }}</td></tr>
+            <tr><td><b>Cantidad Paxs:</b> {{ $cant }}</td></tr>
           </table>
-          <br>
-          <table class="border"  style="border-color: gray">
-            <tr class="border-b" style="background-color: #14b8a6;color:#fff; ">
-              <td class="center" colspan="7" style="padding: 5px">
-                  DETALLES DE PAXS
-              </td>
-            </tr>
-            <tr class="border-b" style="border-color: gray">
-              <td class="pr-2"><b>N°</b></td>
-              <td class=""><b>Nombre</b></td>
-              <td class=""><b>Apellidos</b></td>
-              <td class=""><b>N° Pasaporte</b></td>
-              <td class=""><b>Pais</b></td>
-              <td class=""><b>Sexo</b></td>
-              <td class=""><b>Fecha Nacimiento</b></td>
-            </tr>
 
+          <table>
+
+            <tr><td colspan="7"  class="blue" ><b>PAXS</b></td></tr>
+
+            <tr>
+              <td style=""><b>N°</b></td>
+              <td style="text-align: left"><b>Nombre</b></td>
+              <td style="text-align: left"><b>Apellidos</b></td>
+              <td style="text-align: left"><b>N° Pasaporte</b></td>
+              <td style="text-align: left"><b>Pais</b></td>
+              <td style="text-align: left"><b>Sexo</b></td>
+              <td style="text-align: left"><b>Fecha Nacimiento</b></td>
+            </tr>
               @php
-                  $counts = 0;
+              $counts = 0;
               @endphp
 
               @foreach ($pax as $p)
-                    @php
-                        $counts++;
-                    @endphp
-                  <tr>
-                    <td class="pr-2">{{$counts}}</td>
-                    <td class="">{{$p->name}}</td>
-                    <td class="">{{$p->lastname}}</td>
-                    <td class="">{{$p->passport}}</td>
-                    <td class="">{{$p->nationality}}</td>
-                    <td class="">{{$p->sex}}</td>
-                    <td class="">{{$p->birth_date}}</td>
-                  
-                
-              @endforeach
-           
-          </table>
-          <br>
-          <table class="border" style="border-color: gray">
-            <tr class="border-b" style="background-color: #14b8a6;color:#fff; border-color: gray ">
-              <td class="center" style="padding: 5px">
-                  DETALLE DEL SERVICIO
-              </td>
+                @php
+                    $counts++;
+                @endphp
+            <tr>
+              <td style="">{{$counts}}</td>
+              <td style="text-align: left">{{$p->name}}</td>
+              <td style="text-align: left">{{$p->lastname}}</td>
+              <td style="text-align: left">{{$p->passport}}</td>
+              <td style="text-align: left">{{$p->nationality}}</td>
+              <td style="text-align: left">{{$p->sex}}</td>
+              <td style="text-align: left">{{$p->date_pax}}</td>
+           </tr>
+          @endforeach
+      </table>
+      <table>
+            <tr><td colspan="4" class="blue"><b>LIQUIDACIÓN</b></td></tr>
+            <tr>
+              <td><b>Monto Total</b></td>
+              <td><b>Adelanto</b></td>
+              <td><b>Fecha Adelanto</b></td>
+              <td><b>Falta Pagar</b></td>
             </tr>
-            <div class="p-2 ">
-               {!! $ids->Message !!}
-            </div>
-          <br>
-          </table>
-          <!-- <div class="w100 border block">
-            <div class="p-2 border-b center">
-              <span><b>DETALLES DE EMPRESA</b></span>
-            </div>
-            <div class="p-2 ">
-              <span class="p-1 block w100">DREAMY TOURS</span>
-              <span class="p-1 block w100">+51 969 787 221 | +51 963 414 234</span>
-              <span class="p-1 block w100">info@dreamy.tours | operaciones@dreamy.tours</span>
-              <span class="p-1 block w100">Calle Tecte, CC María Angola, de. 216 2do piso, Cusco. </span>
-            </div>
-          </div> -->
-    
-    <!-- <div class="page-break"></div> -->
+            <tr>
+              <td style="background-color: yellow"><b>162 Dolares</b></td>
+              <td style="background-color: yellow"><b>162 Dolares</b></td>
+              <td style="background-color: yellow"><b>09/06/2022</b></td>
+              <td style="background-color: yellow"><b>0 Dolares</b></td>
+            </tr>
 
+            <tr><td colspan="4" class="blue"><b>DETALLES</b></td></tr>
+
+       </table>
+       <div class="content">
+           {!! $ids->Message !!}
+       </div>
+            <footer>
+                Si tienes alguna pregunta por favor contáctanos
+                Telf: +51 969 787 221 - +51 963 414 234 / E-mail :info@dreamy.tours
+                Gracias por tu Preferencia !
+            </footer>
   
   </body>
 

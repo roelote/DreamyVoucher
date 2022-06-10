@@ -65,13 +65,13 @@
                                             {{$v->name_pax}}
                                         </td>
                                         <td class="px-6 py-4 text-center text-gray-900">
-                                            {{$v->date_package}}
+                                            {{$v->date_show}}
                                         </td>
                                         <td class="px-6 py-4 text-center text-gray-900">
                                             {{$v->language}}
                                         </td>
                                         <td class="px-6 py-4 text-center">
-                                            <a href="#" class="px-6 py-1 text-white bg-blue-600 rounded">Editar</a>
+                                            <a href="{{ route('voucher.edit',$v->id) }}" class="px-6 py-1 text-white bg-blue-600 rounded">Editar</a>
                                         </td>
                                         <td class="px-6 py-4 text-center">
                                             <a target="_blank" href="{{ route('voucher.pdf',$v->id) }}" class="px-6 py-1 text-white bg-red-600 rounded">Ver Pdf</a>

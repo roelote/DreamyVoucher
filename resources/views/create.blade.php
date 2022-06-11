@@ -4,9 +4,9 @@
 
 @section('content')
 
-        <div class="container max-w-7xl mx-auto border border-gray-200 p-3 my-5 relative">
+        <div class="container max-w-7xl mx-auto border border-gray-200 p-3 my-5 relative bg-white">
             <h1 class="text-center font-bold text-gray-700 text-3xl">CREAR VOUCHER 2022</h1>
-            <span class="absolute left-0 top-2"><a href="{{ route('voucher.index') }}" class="border-white rounded-lg p-2 border bg-sky-600 text-white hover:bg-sky-700">Regresar Inicio</a></span>
+            <span class="absolute left-0 top-2"><a href="{{ route('voucher.index') }}" class="border-white  p-2 border bg-sky-600 text-white hover:bg-sky-700">Regresar Inicio</a></span>
 
             <form action="{{ route('voucher.crear') }}" method="POST">
                 @csrf
@@ -596,6 +596,7 @@
     list-style-position: inside;
 }
 </style>
+
 <script>
     ClassicEditor
         .create( document.querySelector( '#detalle' ) )

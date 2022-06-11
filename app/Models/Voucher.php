@@ -37,6 +37,5 @@ class Voucher extends Model
         return $this->date_advancement = Carbon::parse($this->date_advancement)->format('d/m/Y');
      }
 
-   // protected $dateFormat = 'd/m/Y';
 
 }

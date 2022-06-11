@@ -7,32 +7,29 @@
 
         <title>Dreamy Tours - @yield('title')</title>
 
-        <!-- Fonts -->
+      
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
-        <!-- Styles -->
+
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-        <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
         @yield('css')
-        <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css"> -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         @yield('js-top')
-        <!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script> -->
+     
         
     </head>
-    <body>
-        <nav class="bg-gray-200 shadow-md">
-            <div class="container mx-auto p-3">
-                <img src="{{ asset('img/logo-grande.png') }}" alt="logo dreamy" width="150" >
-            </div>
-        </nav>
+    <body class="bg-slate-100">
+        @include('layouts.navigation')
         <section>
            
                  @yield('content')
             
         </section>
+
         @yield('scripts')
+
     </body>
 </html>

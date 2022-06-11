@@ -138,16 +138,16 @@ html
                 @php
                     $counts++;
                 @endphp
-            <tr>
-              <td style="">{{$counts}}</td>
-              <td style="text-align: left">{{$p->name}}</td>
-              <td style="text-align: left">{{$p->lastname}}</td>
-              <td style="text-align: left">{{$p->passport}}</td>
-              <td style="text-align: left">{{$p->nationality}}</td>
-              <td style="text-align: left">{{$p->sex}}</td>
-              <td style="text-align: left">{{$p->date_pax}}</td>
-           </tr>
-          @endforeach
+                  <tr>
+                    <td style="">{{$counts}}</td>
+                    <td style="text-align: left">{{$p->name}}</td>
+                    <td style="text-align: left">{{$p->lastname}}</td>
+                    <td style="text-align: left">{{$p->passport}}</td>
+                    <td style="text-align: left">{{$p->nationality}}</td>
+                    <td style="text-align: left">{{$p->sex}}</td>
+                    <td style="text-align: left">{{$p->date_pax}}</td>
+                </tr>
+              @endforeach
       </table>
       <table>
             <tr><td colspan="4" class="blue"><b>LIQUIDACIÓN</b></td></tr>
